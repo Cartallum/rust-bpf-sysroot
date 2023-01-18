@@ -1,0 +1,12 @@
+[submodule "src/compiler-builtins"]
+	path = src/compiler-builtins
+	url = https://github.com/Cartallum/compiler-builtins.git
+[submodule "src/stdarch"]
+	path = src/stdarch
+	url = https://github.com/rust-lang/stdarch.git
+[submodule "src/hashbrown"]
+	path = src/hashbrown
+	url = https://github.com/Cartallum/hashbrown.git
+[submodule "src/cfg-if"]
+	path = src/cfg-if
+	url = https://github.com/Cartallum/cfg-if.git

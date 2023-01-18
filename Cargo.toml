@@ -1,0 +1,39 @@
+[package]
+name = "rust_bpf_sysroot"
+version = "0.0.1"
+description = "Cartallum CBE BPF noop program written in Rust"
+authors = ["Cartallum CBE Maintainers <maintainers@cartallum.com>"]
+repository = "https://github.com/Cartallum/cbe"
+license = "Apache-2.0"
+homepage = "https://cartallum.com/"
+edition = "2022"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+
+[lib]
+name = "rust_bpf_sysroot"
+crate-type = ["cdylib"]
+
+[dependencies]
+std = { path = "./src/std" }
+panic_abort = { path = "./src/panic_abort" }
+rustc-std-workspace-alloc = { path = "./src/rustc-std-workspace-alloc" }
+rustc-std-workspace-core = { path = "./src/rustc-std-workspace-core" }
+cfg-if = { path = "./src/cfg-if" }
+libm = { path = "./src/compiler-builtins/libm" }
+panic-handler = { path = "./src/compiler-builtins/crates/panic-handler" }
+compiler_builtins = { path = "./src/compiler-builtins" }
+assert-instr-macro = { path = "./src/stdarch/crates/assert-instr-macro" }
+std_detect = { path = "./src/stdarch/crates/std_detect" }
+stdarch-test = { path = "./src/stdarch/crates/stdarch-test" }
+core_arch = { path = "./src/stdarch/crates/core_arch" }
+simd-test-macro = { path = "./src/stdarch/crates/simd-test-macro" }
+stdarch-verify = { path = "./src/stdarch/crates/stdarch-verify" }
+hashbrown = { path = "./src/hashbrown" }
+core = { path = "./src/core" }
+alloc = { path = "./src/alloc" }
+libc = "=0.2.83"

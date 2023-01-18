@@ -1,0 +1,16 @@
+[package]
+name = "test"
+version = "0.0.1"
+description = "Cartallum CBE BPF test program written in Rust"
+authors = ["Cartallum CBE Maintainers <maintainers@cartallum.com>"]
+repository = "https://github.com/Cartallum/cbe"
+license = "Apache-2.0"
+homepage = "https://cartallum.com/"
+edition = "2018"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

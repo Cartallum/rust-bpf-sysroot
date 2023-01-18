@@ -1,0 +1,25 @@
+dist: focal
+addons:
+  apt:
+    sources:
+      - sourceline: 'deb http://apt.llvm.org/focal/ llvm-toolchain-focal-11 main'
+        key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
+    packages:
+      - clang-11
+sudo: required
+language: rust
+cache: cargo
+rust:
+- stable
+- nightly
+os:
+- osx
+- linux
+osx_image: xcode11.3
+matrix:
+  allow_failures:
+  - rust: nightly
+install:
+  - cargo --version
+script:
+  - ./test/build.sh
